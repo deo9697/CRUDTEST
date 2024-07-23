@@ -1,4 +1,4 @@
-package CRUDTEST.TESTCRUD.service;
+package CRUDTEST.TESTCRUD;
 
 import CRUDTEST.TESTCRUD.entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
