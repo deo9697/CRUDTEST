@@ -26,20 +26,18 @@ public class StudentControllerTests {
 	@Test
 	public void testCreateStudent() throws Exception {
 		Student student = new Student();
-		student.setName("John");
-		student.setLastName("Doe");
+		student.setName("Daniele");
+		student.setLastName("de Oliveira");
 		student.setIsWorking(true);
 
 		given(studentService.saveStudent(student)).willReturn(student);
 
 		mockMvc.perform(post("/students")
 						.contentType(MediaType.APPLICATION_JSON)
-						.content("{\"name\":\"John\",\"lastName\":\"Doe\",\"isWorking\":true}"))
+						.content("{\"name\":\"Daniele\",\"lastName\":\"de Oliveira\",\"isWorking\":true}"))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.name").value("John"))
-				.andExpect(jsonPath("$.lastName").value("Doe"))
+				.andExpect(jsonPath("$.name").value("Daniele"))
+				.andExpect(jsonPath("$.lastName").value("de Oliveira"))
 				.andExpect(jsonPath("$.isWorking").value(true));
 	}
-
-	// Altri test possono essere aggiunti qui
 }
